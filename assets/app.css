@@ -82,6 +82,7 @@
   
   .command-form {
     width:100%;
+    position:relative;
   }
   
   .commandline {
@@ -133,4 +134,16 @@
   text-decoration: underline;
   color: white;
   cursor: pointer;
+}
+
+.command-area {
+  position: relative;
+}
+
+#placeholder {
+  position: absolute;
+  margin-top: 4px;
+  left: 134px;
+  pointer-events: none;
+  opacity: .5;
 }

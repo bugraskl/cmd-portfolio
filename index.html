@@ -29,8 +29,11 @@ terminal
     <code>[Girebileceğiniz komutları görmek için "<span id="help">help</span>" yazınız.]    </code>
     <div class="prepend"></div>
     <form onsubmit="return false;" id="command-form" class="group">
-      <span class="fix-span">C:\Users\guest></span>
-      <input type="text" name="command" class="commandline" tabindex="1" autocomplete="off" autofocus/>
+      <div class="command-area">
+        <span class="fix-span">C:\Users\guest></span>
+        <input type="text" name="command" class="commandline" tabindex="1" autocomplete="off" autofocus/>
+        <span id="placeholder"></span>
+      </div>
     </form>
   </div>
 </div>
