@@ -6,7 +6,6 @@ let delay = 500;
 $("#browser-info").html(navigator.userAgent);
 function bottom() {
   $(".window").animate({ scrollTop: $(document).height() }, 1);
-  
 }
 
 $("#help").click(function () {
@@ -40,6 +39,7 @@ let search = [
   "delay def",
   "github",
   "exit",
+  "fullscreen",
 ];
 
 $(function () {
@@ -172,6 +172,9 @@ $(form).submit(function () {
           '<br>Merhaba sevgili ziyaretçim, ben Buğra. Sana daha iyi yardımcı olabilmem için "help" komutunu kullanabilirsin.'
         );
         break;
+      case "fullscreen":
+        toggleFullScreen()
+        break;
       default:
         prepend.append(notfound);
     }
@@ -182,3 +185,29 @@ $(form).submit(function () {
 $(function () {
   $("#draggable").draggable();
 });
+
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement &&    
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  }
