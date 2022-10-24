@@ -50,6 +50,14 @@ $(form).submit(function () {
                 }, 1000);
                 bottom();
                 break;
+            case 'github':
+                prepend.append('<br>>>GitHub projesi açılıyor...');
+                setTimeout(function () {
+                    window.open('https://github.com/bugraskl/cmd-portfolio', '_blank');
+                    prepend.append('<br>>>GitHub projesi açıldı.');
+                }, 1000);
+                bottom();
+                break;
             case 'references':
                 prepend.append(references);
                 bottom();
