@@ -29,7 +29,7 @@ $(form).submit(function () {
     let search = ["about", "help"];
 
     let notfound = "<p>>> Girdiğiniz komut anlaşılamadı. Girebileceğiniz komutları öğrenmek için 'help' yazabilirsiniz.";
-    let help = "<p>>> Bu sayfada aşağıdaki komutları kullanabilirsiniz <br> -about  -> Hakkımda Detaylı Bilgiler<br>-references  -> Referanslarım<br>-contact   -> İletişim Bilgilerim<br>-blog  -> Blog Sayfam<br>-open blog  -> Blog Sayfamı Açar<br>-clear  -> Sayfayı Temizler<br>-green -> Rengi Yeşil Olarak Değiştirir<br>-red -> Rengi Kırmızı Olarak Değiştirir<br>-rainbow -> Rengi Rainbow Effect İle Değiştirir<br>-def -> Rengi Varsayılan Olarak Değiştirir<br>-delay 0 -> Gecikmeyi Kaldırır<br>-delay 100 -> Gecikmeyi 100ms Düşürür<br>-delay def -> Gecikmeyi Varsayılan Olarak Değiştirir<br>-Üst Yön Tuşu   -> Bir Önceki Girdiğiniz Komutu Getirir<br>-github   -> Projeyi GitHub'da Açar</p>";
+    let help = "<p>>> Bu sayfada aşağıdaki komutları kullanabilirsiniz <br> -about  -> Hakkımda Detaylı Bilgiler<br>-references  -> Referanslarım<br>-contact   -> İletişim Bilgilerim<br>-blog  -> Blog Sayfam<br>-open blog  -> Blog Sayfamı Açar<br>-clear  -> Sayfayı Temizler<br>-green -> Rengi Yeşil Olarak Değiştirir<br>-red -> Rengi Kırmızı Olarak Değiştirir<br>-rainbow -> Rengi Rainbow Effect İle Değiştirir<br>-def -> Rengi Varsayılan Olarak Değiştirir<br>-delay 0 -> Gecikmeyi Kaldırır<br>-delay 100 -> Gecikmeyi 100ms Düşürür<br>-delay def -> Gecikmeyi Varsayılan Olarak Değiştirir<br>-Üst Yön Tuşu   -> Bir Önceki Girdiğiniz Komutu Getirir<br>-github   -> Projeyi GitHub'da Açar<br>-exit   -> Sekmeyi kapatır</p>";
     let about = "<p>>> Ben Buğra, 26 yaşındayım. Bursa'da ikamet etmekteyim. Uluslararası web projeleri ile online freelance hizmet veriyorum. Yaklaşık 10 yıl önce ilk web projemi gerçekleştirdim. Uzun yıllar boyunca amatör olarak web geliştirme ile uğraştım ancak son 5 yıldır profesyonel seviyede işler üretiyorum. Benimle birlikte hayal ettiğiniz web sitesini gerçeğe dönüştürebiliriz. Sizin fikirlerinize uygun olarak adım adım ilerleyen bir hizmet anlayışıyla çalışırım. Güncel teknolojiler ile kullanımı basit, tüm cihazlara uyumlu, arama motoru dostu, profesyonel web sitesi sahibi olmak isterseniz doğru yerdesiniz.</p>";
     let blog = "<br>>> <a target='_blank' href='https://blog.bugra.work'>Blog için tıklayınız.</a><br>";
     let contact = "<br>>> <a href='mailto:bugraskl@gmail.com'>Mail Adresim: bugraskl@gmail.com</a> <br>";
@@ -113,6 +113,11 @@ $(form).submit(function () {
             case 'delay def':
                 prepend.append('<br>Gecikme 500ms Olarak Ayarlandı.');
                 delay = 500;
+                bottom();
+                break;
+                case 'exit':
+                prepend.append('<br>Konsol kapatılıyor..');
+                window.top.close();
                 bottom();
                 break;
             default:
